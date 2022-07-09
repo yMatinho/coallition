@@ -72,8 +72,10 @@ class ProjectController extends Controller
 
         $project = Project::where('reference', $projectReference)->first();
 
-        if(userCanDelete(loggedUser($req), $project))
+        if(userCanDelete(loggedUser($req), $project)) {
             $project->delete();
+            Task::where('project_id', $project->id)->delete();
+        }
         return redirect()->route('site.projects.list');
     }
 }
