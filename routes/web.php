@@ -38,7 +38,7 @@ Route::prefix('')
 });
 
 Route::prefix('login')->name('login.')->group(function() {
-    Route::get('/login', [LoginController::class, 'show'])
+    Route::get('/', [LoginController::class, 'show'])
     ->middleware(AbleToLogin::class)
     ->name('show');
 
