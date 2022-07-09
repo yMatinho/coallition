@@ -52,3 +52,111 @@ p.error-message {
     outline: 0;
     cursor: pointer;
 }
+
+section.home-title {
+    margin-top: 60px;
+    text-align: center;
+}
+section.home-title h2 {
+    color: #444;
+    font-size: 64px;
+}
+section.home-title p {
+    font-size: 22px;
+    color: #444;
+    font-weight: 600;
+    margin-top: 30px;
+}
+section.actions {
+    margin-top: 45px;
+}
+section.actions ul {
+    list-style-type: none;
+}
+section.actions ul li {
+    display: inline-block;
+    padding: 0 25px;
+}
+section.actions ul li a {
+    color: #142e5e;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+section.creation {
+    margin-top: 45px;
+}
+section.creation input:not([type=submit]), section.creation select {
+    width: 100%;
+    padding: 8px;
+    border: 2pt solid #ccc;
+    margin-top: 10px;
+    color: #444;
+    font-size: 14px;
+    transition: 0.2s;
+    outline: 0;
+}
+section.creation option {
+    padding: 15px 0;
+}
+section.creation input:not([type=submit]):focus, section.creation select:focus {
+    border-color: #142e5e;
+}
+section.creation label {
+    color: #444;
+    font-weight: 600;
+    font-size: 14px;
+}
+section.creation .form-group {
+    margin-top: 25px;
+}
+section.creation input[type=submit] {
+    padding: 9px 35px;
+    color: white;
+    background-color: #142e5e;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 2px;
+    border: 1pt solid #142e5e;
+    margin-top: 20px;
+    outline: 0;
+    cursor: pointer;
+}
+
+section.list {
+    margin-top: 40px;
+    padding-bottom: 25px;
+}
+section.list ul {
+    list-style-type: none;
+}
+section.list ul li {
+    width: 100%;
+    display: block;
+    background-color: rgb(245, 245, 245);
+    border: 2pt solid #ccc;
+    padding: 15px;
+    color: #444;
+    margin-top: 20px;
+}
+section.list ul[sortable] li {
+    cursor: pointer;
+}
+section.list ul li a {
+    margin-left: 25px;
+    color: #142e5e;
+    font-size: 18px;
+}
+section.filter {
+    margin-top: 30px;
+}
+section.filter select {
+    width: 100%;
+    padding: 8px;
+    border: 2pt solid #ccc;
+    margin-top: 10px;
+    color: #444;
+    font-size: 14px;
+    transition: 0.2s;
+    outline: 0;
+}
