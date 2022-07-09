@@ -32,11 +32,12 @@
         <div class="container">
             <div class="text-center">
                 <ul>
-                    <li><a href="{{ route('site.home') }}">Home</a></li>
+                    <li><a href="{{ route('site.home') }}"><i class="fas fa-home"></i></a></li>
                     <li><a href="{{ route('site.tasks.create') }}">Add Task</a></li>
                     <li><a href="{{ route('site.projects.create') }}">Add Project</a></li>
                     <li><a href="{{ route('site.tasks.list') }}">Task List</a></li>
                     <li><a href="{{ route('site.projects.list') }}">Project List</a></li>
+                    <li><a href="{{ route('login.logout') }}"><i class="fas fa-sign-out-alt"></i></a></li>
                 </ul>
             </div>
         </div>
