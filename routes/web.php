@@ -17,22 +17,22 @@ Route::prefix('')
     Route::get('/', [SiteController::class, 'home'])->name('home');
 
     Route::prefix('tasks')->name('tasks.')->group(function() {
-        Route::get('/tasks', [TaskController::class, 'list'])->name('list');
-        Route::get('/tasks/create', [TaskController::class, 'create'])->name('create');
-        Route::post('/tasks/create', [TaskController::class, 'store'])->name('store');
-        Route::get('/tasks/edit/{reference}', [TaskController::class, 'edit'])->name('edit');
-        Route::post('/tasks/edit/', [TaskController::class, 'update'])->name('update');
-        Route::get('/tasks/delete/{reference}', [TaskController::class, 'delete'])->name('delete');
-        Route::get('/tasks/reorder', [TaskController::class, 'reorder'])->name('reorder');
+        Route::get('/', [TaskController::class, 'list'])->name('list');
+        Route::get('/create', [TaskController::class, 'create'])->name('create');
+        Route::post('/create', [TaskController::class, 'store'])->name('store');
+        Route::get('/edit/{reference}', [TaskController::class, 'edit'])->name('edit');
+        Route::post('/edit', [TaskController::class, 'update'])->name('update');
+        Route::get('/delete/{reference}', [TaskController::class, 'delete'])->name('delete');
+        Route::get('/reorder', [TaskController::class, 'reorder'])->name('reorder');
     });
 
     Route::prefix('projects')->name('projects.')->group(function() {
-        Route::get('/projects', [ProjectController::class, 'list'])->name('list');
-        Route::get('/projects/create', [ProjectController::class, 'create'])->name('create');
-        Route::post('/projects/create', [ProjectController::class, 'store'])->name('store');
-        Route::get('/projects/edit/{reference}', [ProjectController::class, 'edit'])->name('edit');
-        Route::post('/projects/edit/', [ProjectController::class, 'update'])->name('update');
-        Route::get('/projects/delete/{reference}', [ProjectController::class, 'delete'])->name('delete');
+        Route::get('/', [ProjectController::class, 'list'])->name('list');
+        Route::get('/create', [ProjectController::class, 'create'])->name('create');
+        Route::post('/create', [ProjectController::class, 'store'])->name('store');
+        Route::get('/edit/{reference}', [ProjectController::class, 'edit'])->name('edit');
+        Route::post('/edit', [ProjectController::class, 'update'])->name('update');
+        Route::get('/delete/{reference}', [ProjectController::class, 'delete'])->name('delete');
     });
 
 });
