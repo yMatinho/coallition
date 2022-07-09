@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('')
 ->middleware(IsLogged::class)
-->name('site')
+->name('site.')
 ->group(function () {
 
     Route::get('/', [SiteController::class, 'home'])->name('home');
 
-    Route::prefix('tasks')->name('tasks')->group(function() {
+    Route::prefix('tasks')->name('tasks.')->group(function() {
         Route::get('/tasks', [TaskController::class, 'list'])->name('list');
         Route::get('/tasks/create', [TaskController::class, 'create'])->name('create');
         Route::post('/tasks/create', [TaskController::class, 'store'])->name('store');
@@ -26,7 +26,7 @@ Route::prefix('')
         Route::get('/tasks/reorder', [TaskController::class, 'reorder'])->name('reorder');
     });
 
-    Route::prefix('projects')->name('projects')->group(function() {
+    Route::prefix('projects')->name('projects.')->group(function() {
         Route::get('/projects', [ProjectController::class, 'list'])->name('list');
         Route::get('/projects/create', [ProjectController::class, 'create'])->name('create');
         Route::post('/projects/create', [ProjectController::class, 'store'])->name('store');
@@ -37,7 +37,7 @@ Route::prefix('')
 
 });
 
-Route::prefix('login')->name('login')->group(function() {
+Route::prefix('login')->name('login.')->group(function() {
     Route::get('/login', [LoginController::class, 'show'])
     ->middleware(AbleToLogin::class)
     ->name('show');
