@@ -6,6 +6,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\LoginController;
 use App\Http\Middleware\AbleToLogin;
 use App\Http\Middleware\IsLogged;
+use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +24,9 @@ Route::prefix('')
         Route::get('/edit/{reference}', [TaskController::class, 'edit'])->name('edit');
         Route::post('/edit', [TaskController::class, 'update'])->name('update');
         Route::get('/delete/{reference}', [TaskController::class, 'delete'])->name('delete');
-        Route::get('/reorder', [TaskController::class, 'reorder'])->name('reorder');
+        Route::post('/reorder', [TaskController::class, 'reorder'])->name('reorder')->withoutMiddleware(VerifyCsrfToken::class);
+
+        Route::post('change-project', [TaskController::class, 'changeProject'])->name('changeProject')->withoutMiddleware(VerifyCsrfToken::class);
     });
 
     Route::prefix('projects')->name('projects.')->group(function() {
