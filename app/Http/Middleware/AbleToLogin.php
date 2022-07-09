@@ -11,6 +11,6 @@ class AbleToLogin
     {
         if(!$req->session()->exists('login')) // User isn't logged yet
             return $next($req);
-        return redirect()->route('login.show');
+        return redirect()->route('site.home');
     }
 }
