@@ -12,6 +12,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public $timestamps = false;
+
     public function tasks() {
         return $this->hasMany(Task::class, 'user_id', 'id');
     }
